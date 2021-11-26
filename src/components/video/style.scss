@@ -1,0 +1,28 @@
+@import "../../style/mixins/mixins";
+
+.video {
+  max-width: 1100px;
+  height: 600px;
+  padding: 5px;
+  margin: -40px auto 40px auto;
+  border: 2px solid #C99D45;
+  background: linear-gradient(0deg, #1F2E2A, #1F2E2A);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  @include b('900') {
+    margin: 20px 0;
+    border: none;
+    border-radius: 0;
+  }
+
+  video {
+    width: 100%;
+    @include b('900') {
+      padding: 0;
+      height: 400px;
+
+    }
+  }
+}

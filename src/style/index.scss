@@ -1,0 +1,86 @@
+@import "../plugins/normalize.css/normalize";
+@import "mixins/mixins";
+@import "theme/theme";
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  font-family: 'Dosis', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+html {
+  margin: 0 auto;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  margin: 0 auto;
+  cursor: default;
+  overflow-x: hidden;
+  color: white;
+  background-size: cover!important;
+  background: #1d1b21 url("../assets/img/bg.png") no-repeat fixed center center;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a,
+p,
+.button,
+span {
+  transition: 0.4s ease;
+  outline: none;
+}
+
+.section {
+  width: 100%;
+}
+
+h1 {
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+}
+
+.visually-hidden {
+  display: none;
+}
+
+.background-img {
+  position: absolute;
+}
+
+.sidebar-open {
+  overflow-y: hidden;
+}
+
+
+
+
+

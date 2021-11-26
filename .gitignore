@@ -1,0 +1,8 @@
+node_modules
+/build
+/*.log
+.idea
+
+# dotenv environment variables file
+.env
+.env.test

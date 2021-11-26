@@ -1,0 +1,155 @@
+@import "../../style/mixins/mixins";
+
+
+
+.about {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  font-family: Dosis, sans-serif;
+  text-transform: uppercase;
+
+  a {
+    max-width: 206px;
+  }
+
+  @include b('tablet') {
+    padding-top: calc(68px + 50px);
+  }
+
+  &__block-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 15px;
+
+
+    h1 {
+      font-weight: 600;
+      font-size: 74.6429px;
+      line-height: 94px;
+      max-width: 449px;
+      @include b('tablet') {
+        font-size: 49px;
+        line-height: 62px;
+        max-width: 298px;
+      }
+
+      span {
+        @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D))
+      }
+    }
+
+    h2 {
+      font-weight: 500;
+      font-size: 24px;
+      line-height: 30px;
+      color: #E2A553;
+      padding-bottom: 25px;
+      max-width: 342px;
+      text-transform: none;
+
+      @include b('tablet') {
+        padding-bottom: 32px;
+        padding-top: 16px;
+      }
+    }
+
+    div {
+      position: relative;
+      width: 154px;
+      display: flex;
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+
+      &:active {
+        transform: scale(.95);
+      }
+
+      @include b('tablet') {
+        margin: 0 15px;
+        max-width: 206px;
+        width: 100%;
+
+        img {
+          width: 100%;
+        }
+      }
+    }
+
+    h3 {
+      position: absolute;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      color: #3D3D3D;
+    }
+
+  }
+
+  &__block-2 {
+    position: relative;
+    display: flex;
+    padding-top: 3em;
+
+    img:nth-child(1) {
+      min-width: 443px;
+      z-index: 1;
+
+      @include b('1200') {
+        width: 300px;
+        height: 300px;
+        min-width: auto;
+      }
+
+      @include b('900') {
+        display: none;
+      }
+    }
+
+    img:nth-child(2) {
+      position: absolute;
+      bottom: 21px;
+      left: -153px;
+      min-width: 454px;
+      object-fit: none;
+      z-index: 2;
+
+      @include b('900') {
+        display: none;
+      }
+    }
+
+    img:nth-child(3) {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 254px;
+      height: 74px;
+      object-fit: none;
+      background: #000000;
+      opacity: 0.3;
+      filter: blur(20px);
+      z-index: 1;
+
+      @include b('900') {
+        display: none;
+      }
+    }
+    img:nth-child(4) {
+      position: relative;
+      top: -69px;
+      left: -6px;
+      z-index: 1;
+
+      @include b('900') {
+        display: none;
+      }
+    }
+  }
+}

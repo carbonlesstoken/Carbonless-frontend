@@ -1,0 +1,24 @@
+:root {
+  // all site
+  --body-background-color: #1d1b21;
+
+  // text
+  --text-title-color: linear-gradient(87.05deg, #fff 54.97%, #171628 152.38%);
+
+  // buttons
+  --button-orange-background-color: #d23e10;
+  --button-orange-border-color: #d23e10;
+  --button-orange-color: #fff;
+  --button-white-background-color:
+    var(--button-white-background-color)
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.1) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    #fff;
+  --button-white-border-color: #fff;
+  --button-white-border-text-color: #fff;
+  --button-white-color: #000;
+  --metamask-orange-gradient: linear-gradient(0deg, #c35330 0%, #fab7a2 47.33%, #f4673b 100%);
+}

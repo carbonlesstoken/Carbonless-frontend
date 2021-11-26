@@ -1,0 +1,457 @@
+@import "../../style/mixins/mixins";
+@import "../../style/common/colors";
+
+$divider-padding-right: 10px;
+
+.rotate180 {
+  transform: rotate(180deg);
+}
+
+.none {
+  display: none !important;
+}
+
+.header {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 15px;
+
+  &__button-mobile {
+    display: none;
+
+    @include b('900') {
+      display: flex;
+      padding: 10px 0 10px 20px;
+      margin-right: 15px;
+      max-width: 94px;
+      width: 100%;
+      cursor: pointer;
+      background: linear-gradient(90deg, #C99D45 -63.94%, #CDA14B -46.26%, #D8AD5B -22.91%, #EBBF77 3.5%, #F7CC89 18.08%, #F3C784 31.76%, #E8BA75 48.63%, #D6A35C 67.17%, #BC8439 86.75%, #A86B1D 100.11%);
+      border-radius: 4px;
+      clip-path: polygon(17% 0, 100% 0, 100% 100%, 0 100%, 0% 38%);
+
+      h3 {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        text-transform: uppercase;
+
+        color: #3D3D3D;
+      }
+
+      &:hover {
+        background: linear-gradient(117.43deg, rgba(255, 255, 255, 0.6) 31.09%, rgba(255, 255, 255, 0) 67.08%), $gradient-1;
+      }
+
+    }
+
+    @include b('310') {
+      max-width: 81px;
+    }
+  }
+
+  @include b('tablet') {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 68px;
+    background: linear-gradient(0deg, #1F2E2A, #1F2E2A);
+    border-bottom: 2px solid #C99D45;
+    padding: 0;
+  }
+
+  hr {
+    height: 1px;
+    border: 0;
+    background: black;
+    margin: 0 calc(20px - #{$divider-padding-right}) 0 20px;
+  }
+
+  &__logo {
+    &_desktop {
+      height: 150px;
+
+      @include b('tablet') {
+        display: none;
+      }
+    }
+
+    &_mobile {
+      display: none;
+
+      @include b('tablet') {
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 7px;
+        transform: translate(-50%, 0);
+      }
+    }
+  }
+
+  &__nav {
+    &_desktop {
+      display: flex;
+      width: 176px;
+      font-family: Dosis, sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      text-transform: uppercase;
+      justify-content: space-between;
+
+      a {
+        cursor: pointer;
+      }
+
+      @include b('tablet') {
+        display: none;
+      }
+
+      &_link {
+        &--active {
+          @include text-gradient($gradient-1);
+        }
+      }
+    }
+
+    &_mobile {
+      display: none;
+
+      @include b('tablet') {
+        display: flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 999999;
+        padding-left: 15px;
+
+        &_icon {
+          position: absolute;
+        }
+      }
+    }
+
+    &_sidebar {
+      position: fixed;
+      top: 0;
+      border: 0;
+      left: 0;
+      right: 0;
+      height: 100vh;
+      width: 100%;
+      z-index: 9999;
+
+      &_bg {
+        display: block;
+        position: fixed;
+        top: 0;
+        border: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        object-fit: none;
+      }
+
+      &_tree {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 129px;
+      }
+
+      &_container {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        padding-top: 100px;
+
+        &_block {
+          z-index: 9;
+          position: absolute;
+          top: 63%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        &_footer {
+          display: flex;
+          position: absolute;
+          margin: 0 auto;
+          bottom: 0;
+          padding: 25px 15px;
+          align-items: center;
+          justify-content: space-between;
+          max-width: 390px;
+          width: 100%;
+          left: 50%;
+          transform: translateX(-50%);
+
+          &-link {
+            &:not(:last-child) {
+              margin-right: 24px;
+            }
+          }
+        }
+      }
+
+
+      &_wallet {
+        margin: 38px auto;
+
+        &_account {
+          top: 240px !important;
+          left: 50% !important;
+          transform: translateX(-50%) !important;
+
+          &_bg {
+            height: 262px;
+          }
+        }
+
+        &_title {
+          &_container {
+            width: 174px !important;
+          }
+        }
+      }
+
+      a {
+        font-size: 33px;
+        z-index: 10;
+        font-weight: 600;
+        line-height: 42px;
+        width: 186px;
+        margin: 0 auto;
+        text-align: center;
+        text-transform: uppercase;
+        @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D));
+      }
+    }
+  }
+
+  &__wallet,
+  &__nav_sidebar_wallet {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    text-transform: uppercase;
+
+    color: #3D3D3D;
+
+    &_title {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      overflow: hidden;
+      max-width: 174px;
+
+      &_container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        clip-path: polygon(17% 0, 100% 0, 100% 100%, 0 100%, 0% 38%);
+        background: linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D);
+        width: 174px;
+        height: 44px;
+
+        @include b('tablet') {
+          width: 94px;
+        }
+
+        img {
+          width: 8px;
+          height: 4px;
+
+          @include b('tablet') {
+            display: none;
+          }
+        }
+
+        div {
+          padding: 0 8px;
+          overflow: hidden;
+        }
+      }
+    }
+
+    &_nav {
+      position: absolute;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      width: 194px;
+      height: 90px;
+      margin-top: 6px;
+
+      &_container {
+        position: absolute;
+        width: calc(100% - #{$divider-padding-right});
+
+        &_item {
+          display: flex;
+          padding: 10px 0 10px 20px;
+          cursor: pointer;
+
+          &:hover {
+            background: linear-gradient(117.43deg, rgba(255, 255, 255, 0.6) 31.09%, rgba(255, 255, 255, 0) 67.08%), $gradient-1;
+          }
+
+          img {
+            padding-right: 8px;
+          }
+        }
+      }
+
+      &>img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &_account {
+      margin-top: 6px;
+      position: absolute;
+      display: flex;
+      z-index: 9999;
+      width: 330px;
+
+      @include b('330') {
+        max-width: 330px;
+        min-width: 260px;
+        width: 100%;
+      }
+
+      &_container {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        padding: 30px 15px 19px 15px;
+        text-align: left;
+
+        &_close {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+        }
+
+        &_header {
+          width: 250px;
+
+          h2 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 30px;
+            text-transform: uppercase;
+            @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D));
+          }
+
+          h3 {
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            text-transform: uppercase;
+            color: #fff;
+          }
+        }
+
+        &_main {
+          display: flex;
+          clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%, 0 30%);
+          width: 300px;
+          height: 63px;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 8px 0 15px;
+          margin-top: 19px;
+          background: #384641;
+
+          @include b('330') {
+            max-width: 330px;
+            width: 100%;
+          }
+
+          h2 {
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 25px;
+            text-transform: uppercase;
+
+            color: #FFFFFF;
+          }
+
+          img {
+            cursor: pointer;
+
+            &:active {
+              transform: scale(0.95);
+            }
+          }
+
+        }
+
+        &_footer {
+          display: flex;
+          margin-top: 52px;
+          align-items: center;
+          cursor: pointer;
+          width: 200px;
+
+          h2 {
+            font-weight: 600;
+            font-size: 24px;
+            line-height: 30px;
+            text-transform: uppercase;
+            @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D));
+          }
+
+          img {
+            margin-right: 13px;
+            width: 24px;
+            height: 24px;
+          }
+        }
+
+      }
+    }
+  }
+
+  &__wallet {
+
+    @include b('900') {
+      display: none;
+    }
+
+    &_account {
+      @include b('1440') {
+        right: 12px;
+      }
+
+      &_nav {
+        @include b('900') {
+          display: none;
+        }
+      }
+    }
+
+    @include b('tablet') {
+      padding-right: 15px;
+    }
+  }
+}

@@ -1,0 +1,170 @@
+@import "../../style/mixins/mixins";
+@import "../../style/common/colors";
+
+.test {
+  position: fixed;
+  z-index: 9999999999999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.modal-container {
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 10px 40px rgba(34, 34, 34, 0.1);
+  background: linear-gradient(178.75deg, #061912 38.33%, #154030 112.25%);
+  border-radius: 12px;
+  border: 2px solid #C99D45;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 40px;
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &_title {
+    @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D));
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+
+    span {
+      color: #FFFFFF!important;
+      -webkit-text-fill-color: #fff;
+    }
+  }
+
+  &_body {
+    @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D));
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+
+  &_instructions {
+    margin: 20px auto 0 auto;
+
+    h3 {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 15px;
+      line-height: 19px;
+      text-transform: uppercase;
+
+      color: #FFFFFF;
+    }
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  z-index: 9999999999999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.blackText {
+  color: #000;
+}
+
+.whiteCircle {
+  margin: 30px auto;
+  background: #fff;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(180deg, #061912 0%, #154030 91.85%);
+  border: 2px solid #C99D45;
+
+  h2 {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D));
+  }
+}
+
+.instructions {
+  margin-top : 20px;
+}
+
+.againBtn {
+  display: flex;
+  width: 250px;
+  height: 60px;
+  margin: 30px auto 0;
+  text-transform: uppercase;
+}
+
+.scannerBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 206px;
+  height: 58px;
+  text-transform: uppercase;
+  margin: 30px auto 0;
+  border: none;
+  background: $gradient-1;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: .4s ease-in-out;
+
+  &:hover {
+    background: linear-gradient(117.43deg, rgba(255, 255, 255, 0.6) 31.09%, rgba(255, 255, 255, 0) 67.08%), $gradient-1;
+  }
+
+  &:active {
+    transform: scale(.95);
+  }
+
+  a {
+    font-weight: 600;
+    font-size: 21.4026px;
+    line-height: 27px;
+    text-align: center;
+    text-transform: uppercase;
+    color: #3D3D3D;
+  }
+}
+
+.close-btn {
+  position: absolute;
+  right: 14px;
+  top: 14px;
+  cursor: pointer;
+  &:hover {
+    opacity: .7;
+  }
+}
+
+.pending {
+  @include rotateAnimation;
+}

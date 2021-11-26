@@ -1,0 +1,186 @@
+@import "../../style/mixins/mixins";
+
+.max-height440 {
+  max-height: 440px !important;
+  height: 440px !important;
+}
+
+.team {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 48px auto 70px auto;
+  padding-top: 50px;
+  padding-bottom: 70px;
+
+  font-family: Dosis, sans-serif;
+  position: relative;
+
+  border: 2px solid #C99D45;
+  background: linear-gradient(180deg, rgba(6, 25, 18, 0.6) -2.08%, rgba(21, 64, 48, 0.6) 41.85%);
+  border-radius: 12px;
+
+  &__rectangle {
+    display: none;
+  }
+
+  @include b('1200') {
+    max-width: 1100px;
+    margin-top: 20px;
+    padding: 0 0 23px 0;
+    border: 2px solid #C99D45;
+    background: linear-gradient(180deg, rgba(6, 25, 18, 0.6) -2.08%, rgba(21, 64, 48, 0.6) 41.85%);
+    border-radius: 12px;
+    &__rectangle {
+      display: none;
+    }
+  }
+
+  @include b('1000') {
+    border-right: none;
+    border-left: none;
+    border-radius: 0;
+  }
+
+  .cards {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+    @include b('1000') {
+      max-width: 100%;
+      overflow-x: auto;
+      justify-content: flex-start;
+      padding: 0 15px;
+    }
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    @include b('1200') {
+      position: inherit;
+      max-width: 100%;
+    }
+
+    &_title {
+      @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D));
+      font-weight: 600;
+      font-size: 44px;
+      line-height: 56px;
+      text-align: center;
+      text-transform: uppercase;
+      padding-bottom: 30px;
+
+      @include b('1200') {
+        padding-top: 35px;
+      }
+    }
+
+
+    &_content {
+
+      min-width: 318px;
+
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+
+      @include b('1200') {
+        position: inherit;
+        min-width: 318px;
+      }
+
+      &_rectangle {
+        display: none;
+        @include b('1200') {
+          display: none;
+        }
+      }
+
+      &_item {
+        align-items: flex-start;
+        display: flex;
+        flex-direction: column;
+        width: 318px;
+        padding: 10px 10px 32px 10px;
+        background: rgba(0, 0, 0, .2);
+        border-radius: 12px;
+
+        @include b('1200') {
+          position: inherit;
+          background: rgba(0, 0, 0, .2);
+          border-radius: 12px;
+        }
+
+        &_title {
+          @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D));
+          font-weight: 600;
+          font-style: normal;
+          font-size: 25px;
+          line-height: 32px;
+          text-transform: uppercase;
+          padding-top: 24px;
+          padding-bottom: 3px;
+        }
+
+        &_subtitle, &_desc {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 23px;
+        }
+
+        &_title, &_subtitle, &_desc, &_button {
+          padding-left: 10px;
+        }
+
+        &_subtitle {
+          text-transform: uppercase;
+          padding-bottom: 23px;
+        }
+
+        &_desc {
+          max-width: 279px;
+          max-height: 138px;
+          overflow: hidden;
+        }
+
+        &_img {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          img:nth-child(2) {
+            position: absolute;
+            border-radius: 15px;
+          }
+        }
+
+        &_button {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-top: 20px;
+          cursor: pointer;
+
+          h2 {
+            position: absolute;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            text-transform: uppercase;
+            @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D));
+          }
+        }
+      }
+    }
+  }
+}

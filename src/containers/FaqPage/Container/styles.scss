@@ -1,0 +1,90 @@
+@import "../../../style/mixins/mixins";
+@import "../../../style/common/colors";
+@import "../../../style/common/animations";
+@import "../commonStyles";
+
+.container {
+  padding: 30px 30px 30px 55px;
+
+  background-image: url(../../../assets/img/faq/rectangle-container.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  @include b(tablet) {
+    padding: 15px 10px 20px 10px;
+    @include background-styles-clear();
+    background-color: rgba(black, 0.2);
+  }
+
+  &Active {
+    background-image: url(../../../assets/img/faq/rectangle-container-full.png);
+  }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.title {
+  @include text-gradient($gradient-1);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+
+.toggleButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.arrowImage {
+  max-width: initial;
+  user-select: none;
+  transition: transform 0.2s ease-out;
+
+  &Active {
+    transform: rotate(-180deg);
+  }
+}
+
+.contentWrapper {
+  overflow: hidden;
+
+  &Active {
+    padding-top: 10px;
+  }
+}
+
+.content {
+  white-space: break-spaces;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  height: 0px;
+
+  transform-origin: top center;
+
+  &Active {
+    display: block;
+    height: 100%;
+    animation: growDown 0.3s ease-in-out forwards;
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  em {
+    color: #E2A553;
+    font-style: inherit;
+  }
+}

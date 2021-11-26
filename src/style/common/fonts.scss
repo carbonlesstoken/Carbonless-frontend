@@ -1,0 +1,10 @@
+@import "../mixins/main";
+
+//Dosis
+@include font-face('Dosis', '../../assets/fonts/Dosis/Dosis-ExtraLight', 200);
+@include font-face('Dosis', '../../assets/fonts/Dosis/Dosis-Light', 300);
+@include font-face('Dosis', '../../assets/fonts/Dosis/Dosis-Regular', normal);
+@include font-face('Dosis', '../../assets/fonts/Dosis/Dosis-Medium', 500);
+@include font-face('Dosis', '../../assets/fonts/Dosis/Dosis-SemiBold', 600);
+@include font-face('Dosis', '../../assets/fonts/Dosis/Dosis-Bold', 700);
+@include font-face('Dosis', '../../assets/fonts/Dosis/Dosis-ExtraBold', 800);

@@ -1,0 +1,34 @@
+@import "../../style/mixins/mixins";
+
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999999999;
+  background: #051814;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader__iconWrapper {
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preloader__icon {
+  width: 40px;
+  height: auto;
+  fill: var(--color-white);
+  animation: imageFloating 1s linear infinite;
+  position: relative;
+  top: -5px;
+
+  @include rotateAnimation();
+}

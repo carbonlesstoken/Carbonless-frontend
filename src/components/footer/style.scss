@@ -1,0 +1,145 @@
+@import "../../style/mixins/mixins";
+
+.footer {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-bottom: 1em;
+
+  font-family: Dosis, sans-serif;
+  text-transform: uppercase;
+  position: relative;
+
+  @include b('1200') {
+    margin-top: 43px;
+  }
+
+  @include b('900') {
+    border-top: 2px solid #C99D45;
+    padding-top: 1em;
+  }
+
+  &__img {
+    @include b('900') {
+      display: none;
+    }
+  }
+
+  &__title_desktop {
+    @include b('900') {
+      display: none;
+    }
+  }
+
+  &__title_mobile {
+    display: none;
+
+    @include b('900') {
+      display: block;
+    }
+  }
+
+  h2 {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    text-align: left;
+    text-transform: uppercase;
+    font-feature-settings: 'liga'
+  }
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+
+    @include b('900') {
+      flex-direction: column;
+    }
+
+    &_block-1 {
+      &_info {
+        &-links {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 23px;
+          text-transform: uppercase;
+          @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D));
+        }
+
+        &-link {
+          &:not(:last-child) {
+            padding-right: 32px;
+          }
+        }
+
+        @include b('900') {
+          div {
+            text-align: center;
+          }
+        }
+      }
+
+      &_icons {
+        width: max-content;
+        padding-top: 24px;
+        padding-bottom: 32px;
+
+        @include b('310') {
+          width: auto;
+        }
+
+        &-link {
+          &:not(:last-child) {
+            margin-right: 24px;
+            @include b('320') {
+              width: auto;
+              margin-right: 6px;
+            }
+          }
+        }
+      }
+    }
+
+    &_block-2 {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+
+      &_desktop {
+        @include b('900') {
+          display: none;
+        }
+      }
+
+      &_mobile {
+        display: none;
+
+        @include b('900') {
+          display: block;
+        }
+      }
+
+      a {
+        border-top: 1px solid #C99D45;
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 18px;
+        margin-top: 37px;
+
+        @include b('900') {
+          border-top: 0;
+          justify-content: center;
+          padding-top: 0;
+          margin: 0;
+          padding-bottom: 20px;
+        }
+      }
+    }
+  }
+
+}

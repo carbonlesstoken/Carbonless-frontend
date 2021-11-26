@@ -1,0 +1,73 @@
+@import "../../../style/mixins/mixins";
+@import "../../../style/common/colors";
+@import "../commonStyles";
+
+$header-height: 60px;
+
+.wrapper {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: $header-height 10px 130px 10px;
+
+  @include b(900) {
+    padding-bottom: 60px;
+  }
+
+  @include b(tablet) {
+    padding-top: $header-height + 50px;
+  }
+}
+
+.content {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 35px 51px 46px 54px;
+
+  font-family: Dosis, sans-serif;
+
+  background-image: url(../../../assets/img/faq/rectangle-content.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+
+  @include b(tablet) {
+    padding: 0;
+    @include background-styles-clear();
+  }
+}
+
+.rect {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.title {
+  margin-bottom: 36px;
+
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 56px;
+  text-transform: uppercase;
+  @include text-gradient($gradient-1);
+
+  @include b('900') {
+    margin-bottom: 27px;
+    font-size: 34px;
+    line-height: 43px;
+  }
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  @include b(mobile) {
+    gap: 10px;
+  }
+}

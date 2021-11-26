@@ -1,0 +1,15 @@
+export { default as About } from './about';
+export { default as Header } from './header';
+export { default as ProjectInfo } from './project-info';
+export { default as BuyNow } from './buy-now';
+export { default as Addresses } from './important-addresses';
+export { default as Footer } from './footer';
+export { default as Team } from './team';
+export { default as ModalConnected } from './modals';
+export { default as ModalDisconnect } from './modal-disconnect';
+export { default as Progress } from './progress';
+export { default as BuyInfo } from './buy-info';
+export { default as Video } from './video';
+export { default as OnRamper } from './onRamper';
+export { default as PopupPreloader } from './popup-preloader';
+export { default as NavLinks } from './navlinks';

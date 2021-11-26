@@ -1,0 +1,158 @@
+@import "../../style/mixins/mixins";
+
+.addresses {
+  max-width: 1100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding-top: 50px;
+
+  font-family: Dosis, sans-serif;
+  text-transform: uppercase;
+  position: relative;
+
+  @include b('900') {
+    background: linear-gradient(180deg, rgba(6, 25, 18, 0.6) -0.02%, rgba(21, 64, 48, 0.6) 110.91%);
+    border-radius: 12px;
+    border: 2px solid #C99D45;
+    width: auto;
+    margin: 20px 15px;
+    padding: 25px 30px 21px 30px;
+  }
+
+  &__container {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+
+    @include b('900') {
+      position: inherit;
+      flex-direction: column;
+
+      &_bg {
+        display: none;
+      }
+    }
+
+    &_title {
+      font-weight: 600;
+      font-size: 44px;
+      line-height: 56px;
+      text-transform: uppercase;
+      @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D));
+      margin-bottom: 36px;
+
+      @include b('900') {
+        font-size: 34px;
+        line-height: 43px;
+      }
+    }
+
+    &_content {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+
+      @include b('900') {
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      &_item {
+        display: flex;
+        position: relative;
+        align-items: center;
+
+        @include b('900') {
+          background: rgba(0, 0, 0, .2);
+          justify-content: space-between;
+          padding: 10px 20px;
+          height: 103px;
+          margin-bottom: 10px;
+          border-radius: 12px;
+          &_bg {
+            display: none;
+          }
+        }
+
+        &-desktop, &-mobile{
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 25px;
+          text-transform: uppercase;
+          @include text-gradient(linear-gradient(#C99D45, #CDA14B, #D8AD5B, #EBBF77, #F7CC89, #F3C784, #E8BA75, #D6A35C, #BC8439, #A86B1D));
+          padding-bottom: 10px;
+
+          @include b('900') {
+            font-size: 16px;
+            line-height: 20px;
+          }
+        }
+
+        &-mobile {
+          display: none;
+          @include b('900') {
+            display: block;
+          }
+        }
+
+        &-desktop {
+          @include b('900') {
+            display: none;
+          }
+        }
+
+        &:first-child {
+          margin-right: 25px;
+
+          @include b('900') {
+            margin-right: 0;
+          }
+        }
+
+        &_icon {
+          position: absolute;
+          right: 0;
+          padding-right: 1em;
+          cursor: pointer;
+
+          @include b('900') {
+            position: inherit;
+            padding-right: 0;
+          }
+
+          &:active {
+            transform: scale(0.95);
+          }
+        }
+
+        div {
+          position: absolute;
+          padding-left: 25px;
+
+          @include b('900') {
+            position: inherit;
+            padding-left: 0;
+          }
+
+
+          h3 {
+            font-weight: 600;
+            font-size: 18px;
+            line-height: 23px;
+            text-transform: uppercase;
+
+            @include b('900') {
+              font-size: 14px;
+              line-height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
